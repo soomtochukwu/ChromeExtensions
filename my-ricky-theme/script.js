@@ -47,6 +47,7 @@ class RickyPortal {
   setupEventListeners() {
     const searchInput = document.getElementById("searchInput");
     const dimensionBtn = document.querySelector(".dimension-btn");
+    const homeDimensionBtn = document.querySelector(".home-dimension-btn");
 
     // Search functionality
     searchInput.addEventListener("keydown", (e) => {
@@ -62,6 +63,9 @@ class RickyPortal {
     // Dimension jumping
     dimensionBtn.addEventListener("click", () => {
       this.jumpDimension();
+    });
+    homeDimensionBtn.addEventListener("click", () => {
+      this.returnToHomeDimension();
     });
 
     // Portal effects on card hover
@@ -276,6 +280,25 @@ class RickyPortal {
     const dimensionElement = document.getElementById("dimension");
     const newDimension =
       this.dimensions[Math.floor(Math.random() * this.dimensions.length)];
+
+    // Portal effect
+    this.showPortalEffect();
+
+    setTimeout(() => {
+      this.currentDimension = newDimension;
+      dimensionElement.textContent = newDimension;
+
+      // Change background slightly
+      this.updateDimensionTheme();
+
+      // Save preference
+      this.saveUserPreferences();
+    }, 500);
+  }
+
+  returnToHomeDimension() {
+    const dimensionElement = document.getElementById("dimension");
+    const newDimension = this.dimensions[this.dimensions.indexOf("C-137")];
 
     // Portal effect
     this.showPortalEffect();

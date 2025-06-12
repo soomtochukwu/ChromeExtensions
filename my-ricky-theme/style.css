@@ -298,7 +298,7 @@ body {
 }
 
 .dimension-btn {
-    background: linear-gradient(45deg, #ff006e, #8338ec);
+    background: linear-gradient(45deg, #005011, #003968);
     border: none;
     color: white;
     padding: 0.8rem 1.5rem;
@@ -314,7 +314,7 @@ body {
 
 .dimension-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(255, 0, 110, 0.4);
+    box-shadow: 0 5px 20px rgba(94, 94, 94, 0.4);
 }
 
 .footer-text {
