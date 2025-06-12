@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rickyy Portal Control</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 320px;
+            height: 400px;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            border: 3px solid #00ff9d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle, #00ff9d20 0%, transparent 70%);
+            position: relative;
+        }
+
+        .logo::after {
+            content: '🌀';
+            font-size: 24px;
+            animation: spin 3s linear infinite;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ff9d, #3a86ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            color: #8892b0;
+            margin-top: 5px;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .control-group {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .control-label {
+            font-size: 14px;
+            color: #00ff9d;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .dimension-display {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .current-dimension {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .jump-btn {
+            background: linear-gradient(45deg, #ff006e, #8338ec);
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .jump-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 0, 110, 0.4);
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .quick-link {
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .quick-link:hover {
+            background: rgba(0, 255, 157, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .link-icon {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .link-text {
+            font-size: 11px;
+            color: #8892b0;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 10px;
+            color: #8892b0;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00ff9d;
+            animation: pulse 2s ease-in-out infinite;
+            margin-right: 5px;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo"></div>
+        <div class="title">RICKYY PORTAL</div>
+        <div class="subtitle">Web3 Navigation Control</div>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <div class="control-label">Current Dimension</div>
+            <div class="dimension-display">
+                <span class="current-dimension" id="currentDimension">C-137</span>
+                <button class="jump-btn" id="jumpBtn">🌀 Jump</button>
+            </div>
+            <div style="font-size: 11px; color: #8892b0;">
+                <span class="status-indicator"></span>Portal Gun Online
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">Quick Portal Access</div>
+            <div class="quick-links">
+                <a href="https://opensea.io" target="_blank" class="quick-link">
+                    <div class="link-icon">🎨</div>
+                    <div class="link-text">OpenSea</div>
+                </a>
+                <a href="https://uniswap.org" target="_blank" class="quick-link">
+                    <div class="link-icon">🔄</div>
+                    <div class="link-text">Uniswap</div>
+                </a>
+                <a href="https://etherscan.io" target="_blank" class="quick-link">
+                    <div class="link-icon">🔍</div>
+                    <div class="link-text">Etherscan</div>
+                </a>
+                <a href="https://metamask.io" target="_blank" class="quick-link">
+                    <div class="link-icon">🦊</div>
+                    <div class="link-text">MetaMask</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Portal Gun™ v2.0 | Rick Sanchez Industries
+    </div>
+
+    <script>
+        const dimensions = [
+            'C-137', 'J19ζ7', 'C-500A', 'C-35', 'J-22', 'C-1239', 'Φ-214', 'Ω-616'
+        ];
+
+        document.getElementById('jumpBtn').addEventListener('click', () => {
+            const newDimension = dimensions[Math.floor(Math.random() * dimensions.length)];
+            document.getElementById('currentDimension').textContent = newDimension;
+
+            // Send message to content script if needed
+            chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+                if (tabs[0]) {
+                    chrome.tabs.sendMessage(tabs[0].id, {
+                        action: 'jumpDimension',
+                        dimension: newDimension
+                    }).catch(() => {
+                        // Handle error silently - tab might not have content script
+                    });
+                }
+            });
+        });
+
+        // Load current dimension on popup open
+        chrome.storage.local.get(['currentDimension'], (result) => {
+            if (result.currentDimension) {
+                document.getElementById('currentDimension').textContent = result.currentDimension;
+            }
+        });
+    </script>
+</body>
+
+</html>

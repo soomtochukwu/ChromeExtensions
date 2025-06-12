@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Rickyy Web3 Portal by @maziofweb3",
+    "version": "2.0",
+    "description": "A sophisticated Web3-inspired new tab experience with Rick & Morty aesthetics.",
+    "chrome_url_overrides": {
+        "newtab": "newtab.html"
+    },
+    "permissions": [
+        "storage",
+        "activeTab"
+    ],
+    "icons": {
+        "16": "images/icon.jpg",
+        "48": "images/icon.jpg",
+        "128": "images/icon.jpg"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Rickyy Web3 Portal by @maziofweb3"
+    }
+}

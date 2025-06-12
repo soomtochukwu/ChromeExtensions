@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rickyy Web3 Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="portal-ring"></div>
+        <div class="particles"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="portal-icon">
+                    <div class="portal-inner"></div>
+                </div>
+                <h1 class="title">
+                    <span class="title-main">RICKYY</span>
+                    <span class="title-sub">WEB3 PORTAL</span>
+                </h1>
+            </div>
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="status-label">DIMENSION</span>
+                    <span class="status-value" id="dimension">C-137</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">STATUS</span>
+                    <span class="status-value online">ONLINE</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-container">
+                <div class="search-icon">⚡</div>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search the multiverse..."
+                    autocomplete="off">
+                <div class="search-suggestions" id="suggestions"></div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <div class="action-card" onclick="openPortal('https://opensea.io')">
+                <div class="card-icon">🎨</div>
+                <div class="card-title">NFT Marketplace</div>
+                <div class="card-desc">OpenSea Portal</div>
+            </div>
+            <div class="action-card" onclick="openPortal('https://uniswap.org')">
+                <div class="card-icon">🔄</div>
+                <div class="card-title">DeFi Exchange</div>
+                <div class="card-desc">Uniswap Portal</div>
+            </div>
+            <div class="action-card" onclick="openPortal('https://etherscan.io')">
+                <div class="card-icon">🔍</div>
+                <div class="card-title">Blockchain Explorer</div>
+                <div class="card-desc">Etherscan Portal</div>
+            </div>
+            <div class="action-card" onclick="openPortal('https://metamask.io')">
+                <div class="card-icon">🦊</div>
+                <div class="card-title">Wallet Connect</div>
+                <div class="card-desc">MetaMask Portal</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="dimension-selector">
+                <button class="dimension-btn" onclick="changeDimension()">
+                    <span>🌀</span> Jump Dimension
+                </button>
+            </div>
+            <div class="footer-text">
+                <span>Portal Gun™ v2.0 | Powered by Rick Sanchez Industries</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Portal Effect Overlay -->
+    <div class="portal-overlay" id="portalOverlay">
+        <div class="portal-effect">
+            <div class="portal-ring-effect"></div>
+            <div class="portal-center"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
